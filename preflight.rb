@@ -11,8 +11,10 @@ control "preflight" do
   end
 
   # cpu at least 4 cores
-  describe "nproc" do
-    it { should be >= 4 }
+  describe command('nproc') do
+    it { should exist }
+    its('stdout') { should eq '4\\n' }
   end
+
 
 end
