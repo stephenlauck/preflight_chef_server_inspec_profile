@@ -10,4 +10,9 @@ control "preflight" do
     it { should be >= 17179869184 }
   end
 
+  # cpu at least 4 cores
+  describe "nproc" do
+    it { should be >= 4 }
+  end
+
 end
